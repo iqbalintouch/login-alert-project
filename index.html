@@ -80,3 +80,88 @@
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .input-group {
+            margin-bottom: 1em;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 0.5em;
+            box-sizing: border-box;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.5em 1em;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Login</h2>
+    <div class="input-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username">
+    </div>
+    <div class="input-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+    </div>
+    <button class="btn" onclick="login()">Login</button>
+</div>
+
+<script>
+    const dummyCredentials = {
+        username: "testuser",
+        password: "password123"
+    };
+
+    let loginAttempts = 0;
+
+    function login() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if (username === dummyCredentials.username && password === dummyCredentials.password) {
+            alert("Login successful!");
+            loginAttempts = 0; // Reset the counter on successful login
+        } else {
+            loginAttempts++;
+            if (loginAttempts >= 3) {
+                alert("Too many failed login attempts. Please try again later.");
+                loginAttempts = 0; // Reset the counter after alert
+            } else {
+                alert("Invalid credentials. Please try again.");
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
