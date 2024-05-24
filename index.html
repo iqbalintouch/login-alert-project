@@ -12,12 +12,15 @@
             align-items: center;
             height: 100vh;
             background-color: #f0f0f0;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
         }
         .login-container {
             background-color: #fff;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center align content */
         }
         .login-container h2 {
             margin-bottom: 20px;
@@ -38,16 +41,22 @@
             border-radius: 5px;
             color: #fff;
             font-size: 16px;
+            cursor: pointer; /* Change cursor to pointer */
+        }
+        /* Add custom style for the error message */
+        #message {
+            color: red;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <input type="text" id="username" placeholder="Username">
-        <input type="password" id="password" placeholder="Password">
+        <input type="text" id="username" placeholder="test">
+        <input type="password" id="password" placeholder="password13#">
         <button onclick="handleLogin()">Login</button>
-        <p id="message" style="color: red;"></p>
+        <p id="message"></p> <!-- Error message will be displayed here -->
     </div>
 
     <script>
