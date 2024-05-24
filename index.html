@@ -53,8 +53,8 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <input type="text" id="username" placeholder="test">
-        <input type="password" id="password" placeholder="password13#">
+        <input type="text" id="username" placeholder="username">
+        <input type="password" id="password" placeholder="password">
         <button onclick="handleLogin()">Login</button>
         <p id="message"></p> <!-- Error message will be displayed here -->
     </div>
@@ -68,8 +68,8 @@
             const message = document.getElementById('message');
 
             // Dummy credentials for validation
-            const validUsername = 'user';
-            const validPassword = 'password';
+            const validUsername = 'test';
+            const validPassword = 'password123';
 
             if (username === validUsername && password === validPassword) {
                 alert('Login successful!');
